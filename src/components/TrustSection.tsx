@@ -13,7 +13,7 @@ const testimonials = [
     name: "Juliana Lim",
     role: "People Ops Lead",
     company: "CloudArc",
-    avatar: "https://picsum.photos/seed/avatar-juliana/100/100",
+    avatar: "https://picsum.photos/seed/av-juliana/100/100",
   },
   {
     number: "02",
@@ -22,7 +22,7 @@ const testimonials = [
     name: "Sam de Carlo",
     role: "Founder",
     company: "RetailNest",
-    avatar: "https://picsum.photos/seed/avatar-sam/100/100",
+    avatar: "https://picsum.photos/seed/av-sam/100/100",
   },
   {
     number: "03",
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Regina Winston",
     role: "Operations Manager",
     company: "Mediqore",
-    avatar: "https://picsum.photos/seed/avatar-regina/100/100",
+    avatar: "https://picsum.photos/seed/av-regina/100/100",
   },
 ];
 
@@ -42,58 +42,61 @@ export default function TrustSection() {
   const next = () => setActive((c) => (c === testimonials.length - 1 ? 0 : c + 1));
 
   return (
-    <section className="bg-white py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+      {/* Subtle glow behind center card */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-500/[0.04] rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-12"
+          className="text-center max-w-2xl mx-auto mb-14"
         >
           <h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
+            className="text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight"
             style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.5rem)" }}
           >
             Teams Trust TeamUp to Deliver
           </h2>
-          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          <p className="mt-4 text-sm text-white/40 leading-relaxed">
             Honest feedback from founders and HR leads who needed hiring to move
             faster.
           </p>
         </motion.div>
 
-        {/* Testimonial cards carousel */}
+        {/* Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="relative"
         >
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-3">
             {testimonials.map((t, i) => {
               const isActive = i === active;
               return (
                 <div
                   key={t.number}
-                  className={`relative rounded-2xl border-2 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 min-h-[320px] ${
+                  onClick={() => setActive(i)}
+                  className={`relative rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 min-h-[320px] cursor-pointer ${
                     isActive
-                      ? "border-blue-200 bg-white shadow-sm"
-                      : "border-gray-100 bg-gray-50/50"
+                      ? "bg-brand-900/60 border border-blue-500/20 shadow-[0_0_40px_rgba(59,130,246,0.06)]"
+                      : "bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.04]"
                   }`}
                 >
-                  {/* Number */}
                   <p
-                    className={`text-sm font-medium ${
-                      isActive ? "text-gray-900" : "text-gray-400"
+                    className={`text-sm font-medium transition-colors duration-300 ${
+                      isActive ? "text-blue-400" : "text-white/20"
                     }`}
                   >
                     {t.number}
                   </p>
 
-                  {/* Quote — only fully visible on active card */}
                   <AnimatePresence mode="wait">
                     {isActive && (
                       <motion.blockquote
@@ -101,18 +104,21 @@ export default function TrustSection() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
-                        className="my-6 text-base sm:text-lg font-medium text-gray-900 leading-relaxed"
+                        className="my-6 text-base sm:text-lg font-medium text-white/90 leading-relaxed"
                       >
                         &ldquo; {t.quote} &rdquo;
                       </motion.blockquote>
                     )}
                   </AnimatePresence>
 
-                  {/* Bottom: avatar + info + nav */}
                   <div className="mt-auto flex items-end justify-between gap-4">
                     <div className="flex items-center gap-3">
                       {isActive && (
-                        <div className="relative h-10 w-10 rounded-full overflow-hidden shrink-0">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          className="relative h-10 w-10 rounded-full overflow-hidden ring-2 ring-blue-500/20 shrink-0"
+                        >
                           <Image
                             src={t.avatar}
                             alt={t.name}
@@ -120,45 +126,40 @@ export default function TrustSection() {
                             className="object-cover"
                             sizes="40px"
                           />
-                        </div>
+                        </motion.div>
                       )}
                       <div>
-                        <p
-                          className={`text-sm font-semibold ${
-                            isActive ? "text-gray-900" : "text-gray-500"
-                          }`}
-                        >
+                        <p className={`text-sm font-semibold transition-colors ${isActive ? "text-white" : "text-white/40"}`}>
                           {t.name}
                         </p>
-                        <p
-                          className={`text-xs ${
-                            isActive ? "text-gray-500" : "text-gray-400"
-                          }`}
-                        >
+                        <p className={`text-xs transition-colors ${isActive ? "text-white/50" : "text-white/25"}`}>
                           {t.role} &mdash;{" "}
                           <span className="font-semibold">{t.company}</span>
                         </p>
                       </div>
                     </div>
 
-                    {/* Navigation arrows — only on active card */}
                     {isActive && (
-                      <div className="flex items-center gap-2">
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex items-center gap-2"
+                      >
                         <button
-                          onClick={prev}
+                          onClick={(e) => { e.stopPropagation(); prev(); }}
                           aria-label="Previous testimonial"
-                          className="h-9 w-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors"
+                          className="h-9 w-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/20 hover:bg-white/[0.06] transition-all"
                         >
                           <ChevronLeft size={16} />
                         </button>
                         <button
-                          onClick={next}
+                          onClick={(e) => { e.stopPropagation(); next(); }}
                           aria-label="Next testimonial"
-                          className="h-9 w-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors"
+                          className="h-9 w-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/20 hover:bg-white/[0.06] transition-all"
                         >
                           <ChevronRight size={16} />
                         </button>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                 </div>

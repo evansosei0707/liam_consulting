@@ -3,126 +3,191 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
-  }),
-};
+import { ArrowRight } from "lucide-react";
 
 const logos = [
-  "M7",
-  "Logoipsum",
-  "Delta",
-  "Curve",
-  "Logoipsum",
-  "Arc",
-  "Slash",
-  "Logoipsum",
+  "RetailNest",
+  "BrightFoods",
+  "CloudArc",
+  "NovaTech",
+  "Mediqore",
+  "StarOrange",
+  "RetailNest",
+  "BrightFoods",
+  "CloudArc",
+  "NovaTech",
+  "Mediqore",
+  "StarOrange",
 ];
+
+const wordReveal = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06 },
+  },
+};
+
+const wordChild = {
+  hidden: { opacity: 0, y: 40, rotateX: -40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
+function AnimatedHeading({ text, className }: { text: string; className?: string }) {
+  const words = text.split(" ");
+  return (
+    <motion.span
+      variants={wordReveal}
+      initial="hidden"
+      animate="visible"
+      className={className}
+      style={{ perspective: "600px" }}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          variants={wordChild}
+          className="inline-block mr-[0.3em]"
+          style={{ transformOrigin: "bottom" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative bg-white">
-      {/* ── Top hero: centered text ── */}
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 md:pb-16 text-center">
+    <section className="relative min-h-screen flex flex-col bg-brand-950 overflow-hidden grain">
+      {/* Mesh gradient background */}
+      <div className="absolute inset-0 mesh-gradient-dark pointer-events-none" />
+
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Glow orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/[0.07] rounded-full blur-[120px] animate-pulse-glow pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-violet-500/[0.05] rounded-full blur-[100px] animate-pulse-glow pointer-events-none" style={{ animationDelay: "2s" }} />
+
+      {/* ── Main hero content ── */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-36 md:pb-20 text-center">
         {/* Badge */}
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-          <span className="inline-block rounded-full bg-gray-100 px-4 py-1.5 text-xs font-medium text-gray-700">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/[0.08] px-4 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
             Build High-Fit Teams
           </span>
         </motion.div>
 
         {/* Heading */}
-        <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={1}
-          className="mt-8 font-bold leading-[1.1] text-gray-900"
-          style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)" }}
-        >
-          Find the Right People Faster.
-          <br />
-          Keep Them Longer.
-        </motion.h1>
+        <h1 className="mt-8 text-white leading-[1.05] tracking-tight" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}>
+          <AnimatedHeading text="Find the Right People Faster." className="block font-bold" />
+          <AnimatedHeading
+            text="Keep Them Longer."
+            className="block font-bold bg-gradient-to-r from-blue-400 via-violet-400 to-brand-accent bg-clip-text text-transparent"
+          />
+        </h1>
 
         {/* Subtext */}
         <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={2}
-          className="mt-5 text-base text-gray-500 max-w-lg mx-auto leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-6 text-base sm:text-lg text-white/50 max-w-xl mx-auto leading-relaxed"
         >
           TeamUp helps you hire for fit and support onboarding so teams stay
           engaged after day one.
         </motion.p>
 
         {/* CTA */}
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+        >
           <Link
             href="#contact"
-            className="mt-8 inline-block rounded-full bg-gray-900 px-7 py-3 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
+            className="btn-magnetic group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-950 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-300"
           >
             Get Hiring Support
+            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+          <Link
+            href="#about"
+            className="btn-magnetic inline-flex items-center gap-2 rounded-full border border-white/10 px-7 py-3.5 text-sm font-medium text-white/70 hover:text-white hover:border-white/20 hover:bg-white/[0.04] transition-all"
+          >
+            Learn More
           </Link>
         </motion.div>
       </div>
 
-      {/* ── Testimonial row: two images + quote card ── */}
+      {/* ── Testimonial row ── */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.35 }}
-        className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+        transition={{ duration: 0.7, delay: 1 }}
+        className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-12"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-0 rounded-2xl overflow-hidden h-auto md:h-[340px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl overflow-hidden border border-white/[0.06]">
           {/* Left image */}
-          <div className="relative aspect-[4/3] md:aspect-auto">
+          <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px]">
             <Image
-              src="https://picsum.photos/seed/hero-left/600/450"
+              src="https://picsum.photos/seed/hero-left-v2/600/450"
               alt="Team meeting in a modern office"
               fill
               className="object-cover"
               priority
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 to-transparent" />
           </div>
 
           {/* Center quote card */}
-          <div className="bg-gray-100 p-6 sm:p-8 flex flex-col justify-between">
-            <div>
-              <p className="text-[15px] sm:text-base font-medium text-gray-900 leading-relaxed">
-                &ldquo; TeamUp efficiently managed hiring across locations.
-                Scheduling, screening, and documentation ran smoothly, and new
-                hires arrived better prepared. &rdquo;
-              </p>
-            </div>
-            <div className="mt-6">
-              <p className="text-sm font-semibold text-gray-900">
+          <div className="bg-brand-900/80 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between border-x border-white/[0.04]">
+            <p className="text-[15px] sm:text-base font-medium text-white/90 leading-relaxed">
+              &ldquo; TeamUp efficiently managed hiring across locations.
+              Scheduling, screening, and documentation ran smoothly, and new
+              hires arrived better prepared. &rdquo;
+            </p>
+            <div className="mt-6 pt-4 border-t border-white/[0.06]">
+              <p className="text-sm font-semibold text-white">
                 Regina Winston
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs text-white/50">
                 Operations Manager &mdash;{" "}
-                <span className="font-semibold text-gray-900">Mediqore</span>
+                <span className="font-semibold text-white/70">Mediqore</span>
               </p>
             </div>
           </div>
 
           {/* Right image */}
-          <div className="relative aspect-[4/3] md:aspect-auto">
+          <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px]">
             <Image
-              src="https://picsum.photos/seed/hero-right/600/450"
+              src="https://picsum.photos/seed/hero-right-v2/600/450"
               alt="Professional holding a tablet in an office"
               fill
               className="object-cover"
               priority
               sizes="(max-width: 768px) 100vw, 33vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 to-transparent" />
           </div>
         </div>
       </motion.div>
@@ -131,13 +196,13 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mt-12 md:mt-16 text-center px-4"
+        transition={{ duration: 0.5, delay: 1.2 }}
+        className="relative z-10 text-center px-4 pb-8"
       >
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-white/40">
           Trusted by companies improving{" "}
-          <span className="font-semibold text-gray-900">retention</span>
-          <br className="sm:hidden" /> and ramp time.
+          <span className="font-semibold text-white/70">retention</span> and
+          ramp time.
         </p>
       </motion.div>
 
@@ -145,45 +210,17 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="mt-8 bg-gray-100 overflow-hidden"
+        transition={{ duration: 0.5, delay: 1.3 }}
+        className="relative z-10 border-t border-white/[0.04] bg-white/[0.02]"
       >
-        <div className="mx-auto max-w-7xl py-5">
-          <div className="flex items-center gap-12 md:gap-16 animate-marquee whitespace-nowrap">
-            {[...logos, ...logos].map((name, i) => (
+        <div className="mx-auto max-w-7xl py-5 overflow-hidden">
+          <div className="flex items-center gap-16 animate-marquee whitespace-nowrap">
+            {logos.map((name, i) => (
               <span
                 key={i}
-                className="text-base font-bold text-gray-400 select-none shrink-0 tracking-wide"
+                className="text-sm font-semibold text-white/20 select-none shrink-0 tracking-wider uppercase"
               >
-                {name === "Logoipsum" ? (
-                  <span className="flex items-center gap-1.5">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="opacity-50">
-                      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="2" />
-                      <circle cx="10" cy="10" r="3" fill="currentColor" />
-                    </svg>
-                    Logoipsum
-                  </span>
-                ) : name === "M7" ? (
-                  <span className="text-xl font-black tracking-tighter">M7</span>
-                ) : name === "Delta" ? (
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="opacity-50">
-                    <path d="M12 3L22 21H2L12 3Z" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                ) : name === "Curve" ? (
-                  <svg width="28" height="20" viewBox="0 0 28 20" fill="none" className="opacity-50">
-                    <path d="M2 18C8 2 20 2 26 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                ) : name === "Arc" ? (
-                  <svg width="26" height="20" viewBox="0 0 26 20" fill="none" className="opacity-50">
-                    <path d="M2 18C2 8 8 2 13 2C18 2 24 8 24 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                ) : name === "Slash" ? (
-                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" className="opacity-50">
-                    <path d="M15 2L5 22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                ) : (
-                  <span>{name}</span>
-                )}
+                {name}
               </span>
             ))}
           </div>
