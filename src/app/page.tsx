@@ -22,7 +22,7 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <TrustSection />
-        <BuiltForTeams />
+        {/* <BuiltForTeams /> */}
         <CTASection />
         <Blog />
         <FAQ />

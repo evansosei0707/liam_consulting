@@ -6,23 +6,23 @@ import { motion } from "framer-motion";
 const posts = [
   {
     title: "The Hiring Scorecard That Saves Hours",
-    category: "Recruitment Strategy",
-    image: "https://picsum.photos/seed/blog-score-v2/500/600",
+    category: "All White Collar Jobs",
+    image: "/img/corporate_workers.jpg",
   },
   {
     title: "Day-One Onboarding Checklist for Every Role",
-    category: "Hiring Operations",
-    image: "https://picsum.photos/seed/blog-onboard-v2/500/600",
+    category: "Factory Workers",
+    image: "/img/factory_workers.jpg",
   },
   {
     title: "Sourcing Methods That Work in Competitive Markets",
-    category: "Talent Acquisition",
-    image: "https://picsum.photos/seed/blog-source-v2/500/600",
+    category: "Tech & IT",
+    image: "/img/tech_guys.jpg",
   },
   {
     title: "Employer Branding That Attracts Better Applicants",
-    category: "Employer Branding",
-    image: "https://picsum.photos/seed/blog-brand-v2/500/600",
+    category: "Blue Collar Jobs",
+    image: "/img/factory_worker1.png",
   },
 ];
 
@@ -44,11 +44,10 @@ export default function Blog() {
             className="text-3xl sm:text-4xl font-bold text-white leading-tight max-w-sm tracking-tight"
             style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.5rem)" }}
           >
-            Hiring Insights that Actually Help
+            We can get any Talents you need
           </h2>
           <p className="text-sm text-white/40 max-w-xs leading-relaxed md:text-right">
-            Practical guides on recruitment, onboarding, and building better
-            teams.
+            Our Team is dedicated to finding the best talents for your business.
           </p>
         </motion.div>
 
@@ -80,9 +79,9 @@ export default function Blog() {
                 </span>
               </div>
 
-              <h3 className="mt-2.5 text-[15px] font-semibold text-white/90 leading-snug group-hover:text-blue-400 transition-colors duration-300">
+              {/* <h3 className="mt-2.5 text-[15px] font-semibold text-white/90 leading-snug group-hover:text-blue-400 transition-colors duration-300">
                 {post.title}
-              </h3>
+              </h3> */}
             </motion.article>
           ))}
         </div>

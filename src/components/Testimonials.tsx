@@ -26,7 +26,7 @@ export default function Testimonials() {
             Real Hiring Wins, Real Business Impact
           </h2>
           <p className="text-sm text-white/40 max-w-sm leading-relaxed md:text-right">
-            See how TeamUp helped teams reduce hiring time and improve onboarding
+            See how Liam Consulting helped teams reduce hiring time and improve onboarding
             outcomes.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ export default function Testimonials() {
         >
           <div className="relative aspect-[4/3] md:aspect-auto min-h-[240px]">
             <Image
-              src="https://picsum.photos/seed/case-cloud-v2/500/500"
+              src="/img/scale.png"
               alt="Customer support team at CloudArc"
               fill
               className="object-cover"
@@ -137,7 +137,7 @@ export default function Testimonials() {
 
           <div className="relative aspect-[4/3] md:aspect-auto min-h-[240px]">
             <Image
-              src="https://picsum.photos/seed/case-retail-v2/500/500"
+              src="/img/mass-hire.png"
               alt="Warehouse operations team at RetailNest"
               fill
               className="object-cover"

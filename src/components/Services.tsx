@@ -1,56 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Users, Briefcase, GraduationCap, Target, Megaphone, Lightbulb, Sparkles } from "lucide-react";
 
 const services = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <circle cx="9" cy="10" r="2.5" />
-        <path d="M15 8h2M15 12h2" />
-        <path d="M5 21c1-3 3-5 6-5s4 2 5 5" />
-      </svg>
-    ),
-    title: "Quality-First, Curated Shortlists",
-    description:
-      "We focus on fit, not volume, so you interview better candidates faster.",
+    icon: <Users size={24} />,
+    title: "Recruitment Support",
+    description: "Access top-tier talent with our extensive database and quick turnaround time.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 3" />
-      </svg>
-    ),
-    title: "Fast Turnaround, Always Updated",
-    description:
-      "Clear timelines, weekly progress updates, and a predictable hiring workflow.",
+    icon: <Briefcase size={24} />,
+    title: "HR Outsourcing & Consulting",
+    description: "Outsource HR functions and let us handle the rest transparently.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M5 20c0-4 3-7 7-7s7 3 7 7" />
-        <path d="M8 3c-1 1-1.5 2-1 3M16 3c1 1 1.5 2 1 3" />
-      </svg>
-    ),
-    title: "Human-Centered Onboarding",
-    description:
-      "We help new hires feel ready, welcomed, and productive from day one.",
+    icon: <GraduationCap size={24} />,
+    title: "Training & Development",
+    description: "Expert Training and Verification to elevate your organization's skills.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="7" cy="8" r="3" />
-        <circle cx="17" cy="8" r="3" />
-        <path d="M2 20c0-3 2-5 5-5M22 20c0-3-2-5-5-5" />
-        <path d="M12 11v4M10 13h4" />
-      </svg>
-    ),
-    title: "Flexible for Teams of Any Size",
-    description:
-      "Startups to enterprise — we adapt our process to match your hiring velocity.",
+    icon: <Target size={24} />,
+    title: "Business Branding",
+    description: "Enhance your business presence and build a compelling employer brand.",
+  },
+  {
+    icon: <Megaphone size={24} />,
+    title: "Digital Marketing",
+    description: "Strategic digital marketing solutions to drive your business growth.",
+  },
+  {
+    icon: <Lightbulb size={24} />,
+    title: "Business Advisory",
+    description: "Expert consulting and strategic guidance for organizational success.",
+  },
+  {
+    icon: <Sparkles size={24} />,
+    title: "Laundry & Cleaning",
+    description: "Experts in Residential and Commercial Laundry and Disinfection Services.",
   },
 ];
 
@@ -72,11 +59,11 @@ export default function Services() {
             className="text-3xl sm:text-4xl font-bold text-white leading-tight max-w-md tracking-tight"
             style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.5rem)" }}
           >
-            Hiring Should Feel Clear, Not Chaotic
+            Our Expertise
           </h2>
           <p className="text-sm text-white/40 max-w-sm leading-relaxed md:text-right">
-            We combine structured process, market insight, and hands-on support
-            so you hire confidently.
+            Our integrated approach ensures your business has the human capital
+            and operational tools needed to thrive.
           </p>
         </motion.div>
 

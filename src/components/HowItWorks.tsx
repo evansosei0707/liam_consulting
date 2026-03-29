@@ -3,49 +3,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Users, Briefcase, Target, Sparkles } from "lucide-react";
 
 const services = [
   {
     tag: "Recruitment",
     number: "01",
-    title: "End-to-End Recruitment",
-    description: "Full-cycle hiring support from sourcing to offer negotiation.",
-    image: "https://picsum.photos/seed/svc-recruit-v2/300/300",
+    title: "Find the right Candidate/Fit",
+    description: "Access top-tier talent with our extensive database and quick turnaround time.",
+    icon: <Users size={100} strokeWidth={0.8} />,
   },
   {
-    tag: "Talent Acquisition",
+    tag: "HR Outsourcing",
     number: "02",
-    title: "Talent Sourcing & Shortlisting",
-    description: "Curated candidate lists based on your role needs and culture fit.",
-    image: "https://picsum.photos/seed/svc-talent-v2/300/300",
+    title: "Focus on what Matters",
+    description: "Outsource HR functions and let us handle the rest transparently.",
+    icon: <Target size={100} strokeWidth={0.8} />,
   },
   {
-    tag: "Hiring Operations",
+    tag: "Consulting",
     number: "03",
-    title: "Interview & Assessment Support",
-    description: "Screening calls, interview scheduling, and skill-based evaluation setup.",
-    image: "https://picsum.photos/seed/svc-interview-v2/300/300",
+    title: "Drive Excellence",
+    description: "Expert Consulting, Training and Verification to elevate your organization.",
+    icon: <Briefcase size={100} strokeWidth={0.8} />,
   },
   {
-    tag: "Onboarding",
+    tag: "Services",
     number: "04",
-    title: "Onboarding & New Hire Setup",
-    description: "Structured onboarding flows, documentation, and first-week readiness.",
-    image: "https://picsum.photos/seed/svc-onboard-v2/300/300",
-  },
-  {
-    tag: "HR Operations",
-    number: "05",
-    title: "HR Documentation & Compliance",
-    description: "Contracts, policies, HR forms, and basic compliance guidance support.",
-    image: "https://picsum.photos/seed/svc-hrdoc-v2/300/300",
-  },
-  {
-    tag: "Branding",
-    number: "06",
-    title: "Employer Branding Support",
-    description: "Job post optimization, careers page content, and candidate experience upgrades.",
-    image: "https://picsum.photos/seed/svc-brand-v2/300/300",
+    title: "Professional Cleaning Services",
+    description: "Experts in Residential and Commercial Laundry and Disinfection Services etc.",
+    icon: <Sparkles size={100} strokeWidth={0.8} />,
   },
 ];
 
@@ -68,12 +55,11 @@ export default function HowItWorks() {
             className="text-3xl sm:text-4xl font-bold text-white leading-tight max-w-md tracking-tight"
             style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.5rem)" }}
           >
-            Everything You Need to Build a Stronger Team
+            We Focus On Helping You
           </h2>
           <div className="md:text-right">
             <p className="text-sm text-white/40 max-w-sm leading-relaxed">
-              Flexible services designed for fast-growing companies, busy HR
-              teams, and high-volume hiring.
+              We are your trusted partner for growth and excellence.
             </p>
             <Link
               href="#services"
@@ -84,8 +70,8 @@ export default function HowItWorks() {
           </div>
         </motion.div>
 
-        {/* 2x3 Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* 2x2 Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
           {services.map((service, i) => (
             <motion.div
               key={service.number}
@@ -105,15 +91,9 @@ export default function HowItWorks() {
                 </span>
               </div>
 
-              {/* Tilted photo */}
-              <div className="absolute -top-1 right-4 w-[100px] h-[110px] sm:w-[110px] sm:h-[120px] rotate-6 rounded-xl overflow-hidden shadow-2xl shadow-black/30 ring-1 ring-white/[0.08] group-hover:rotate-3 group-hover:scale-105 transition-all duration-500">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  sizes="110px"
-                />
+              {/* Huge Icon */}
+              <div className="absolute top-2 right-4 text-white/10 group-hover:text-blue-400 group-hover:rotate-6 group-hover:scale-110 transition-all duration-500 pointer-events-none drop-shadow-2xl">
+                {service.icon}
               </div>
 
               {/* Bottom */}

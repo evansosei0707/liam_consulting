@@ -36,12 +36,23 @@ export default function CTASection() {
                 className="relative text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight"
                 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.25rem)" }}
               >
-                Need Hiring Support This Month?
+                Ready to Elevate Your Organization?
               </h2>
+
+              <div className="mt-8 space-y-4 relative z-10">
+                <div>
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-semibold mb-1">Contact</p>
+                  <p className="text-lg text-white font-medium">+233 (0) 20 901 3744</p>
+                </div>
+                <div>
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-semibold mb-1">Email</p>
+                  <p className="text-lg text-white font-medium">info@liamconsultingltd.com</p>
+                </div>
+              </div>
 
               <div className="hidden lg:block mt-12 relative w-[200px] h-[220px] rounded-2xl overflow-hidden ring-1 ring-white/[0.08] shadow-2xl shadow-black/20">
                 <Image
-                  src="https://picsum.photos/seed/cta-woman-v2/400/440"
+                  src="/logo2.png"
                   alt="HR professional ready to help"
                   fill
                   className="object-cover"
@@ -54,8 +65,7 @@ export default function CTASection() {
             {/* Right column — form */}
             <div className="p-8 sm:p-10 lg:p-12 lg:pl-4">
               <p className="text-sm text-white/40 leading-relaxed mb-7 max-w-lg">
-                Tell us what roles you&apos;re hiring for, and we&apos;ll send a
-                tailored quote and timeline within 24–48 hours.
+                Contact us today for top talent, HR outsourcing, training, strategic guidance, or professional cleaning services.
               </p>
 
               <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
@@ -68,13 +78,13 @@ export default function CTASection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="relative">
-                    <select aria-label="Choose your Hiring Need" defaultValue="" className={selectClass}>
-                      <option value="" disabled>Choose your Hiring Need</option>
-                      <option value="recruitment">Full-Cycle Recruitment</option>
-                      <option value="sourcing">Talent Sourcing</option>
-                      <option value="onboarding">Onboarding Support</option>
-                      <option value="hr-consulting">HR Consulting</option>
-                      <option value="employer-branding">Employer Branding</option>
+                    <select aria-label="Choose your Need" defaultValue="" className={selectClass}>
+                      <option value="" disabled>Choose your Need</option>
+                      <option value="recruitment">Recruitment Support</option>
+                      <option value="outsourcing">HR Outsourcing</option>
+                      <option value="training">Training & Development</option>
+                      <option value="branding">Business Branding & Marketing</option>
+                      <option value="cleaning">Laundry & Cleaning Services</option>
                     </select>
                     <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
                   </div>

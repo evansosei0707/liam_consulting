@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TeamUp | Find the Right People Faster. Keep Them Longer.",
+  title: "Liam Consulting Limited | Transforming HR One Business at a Time.",
   description:
-    "TeamUp is your trusted HR & Recruitment partner. From talent sourcing to onboarding, we help you build stronger teams with confidence.",
+    "Liam Consulting Limited is your Strategic HR Partner. From recruitment support to onboarding, we help you build stronger teams with confidence.",
   keywords: [
     "HR",
     "recruitment",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "hiring",
   ],
   openGraph: {
-    title: "TeamUp | Find the Right People Faster. Keep Them Longer.",
+    title: "Liam Consulting Limited | Transforming HR One Business at a Time.",
     description:
       "Your trusted HR & Recruitment partner for building exceptional teams.",
     type: "website",

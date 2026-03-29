@@ -5,40 +5,40 @@ import { motion } from "framer-motion";
 
 const clientCards = [
   {
-    image: "https://picsum.photos/seed/cl-retail/200/200",
-    value: "7-day",
-    label: "hiring turnaround",
-    company: "RetailNest",
+    image: "/img/company_logos/mtn.png",
+    value: "100+",
+    label: "roles filled efficiently",
+    company: "MTN",
   },
   {
-    image: "https://picsum.photos/seed/cl-bright/200/200",
+    image: "/img/company_logos/pwc.jpg",
+    value: "100%",
+    label: "compliance maintained",
+    company: "PwC",
+  },
+  {
+    image: "/img/company_logos/nestle.jpg",
     value: "50+",
-    label: "candidates screened per role",
-    company: "BrightFoods",
+    label: "staff trained yearly",
+    company: "Nestle",
   },
   {
-    image: "https://picsum.photos/seed/cl-star/200/200",
-    value: "85%",
-    label: "Higher 90-day retention rate",
-    company: "StarOrange",
+    image: "/img/company_logos/kmpg.jpg",
+    value: "Trusted",
+    label: "advisory partnership",
+    company: "KPMG",
   },
   {
-    image: "https://picsum.photos/seed/cl-cloud/200/200",
-    value: "48-hour",
-    label: "onboarding setup",
-    company: "CloudArc",
+    image: "/img/company_logos/eco-bank.jpg",
+    value: "Top-Tier",
+    label: "talent acquisition",
+    company: "Ecobank",
   },
   {
-    image: "https://picsum.photos/seed/cl-nova/200/200",
-    value: "24-hour",
-    label: "interview scheduling",
-    company: "NovaTech",
-  },
-  {
-    image: "https://picsum.photos/seed/cl-medi/200/200",
-    value: "35%",
-    label: "Faster end-to-end time-to-hire",
-    company: "Mediqore",
+    image: "/img/company_logos/anglo-gold.png",
+    value: "Scale",
+    label: "workforce management",
+    company: "AngloGold Ashanti",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function Stats() {
                     src={card.image}
                     alt={card.company}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain bg-white group-hover:scale-105 transition-transform duration-500 p-1"
                     sizes="88px"
                   />
                 </div>

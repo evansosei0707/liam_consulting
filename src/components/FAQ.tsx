@@ -26,7 +26,7 @@ const faqs = [
       "Absolutely. We provide full-time, part-time, contract, and temp-to-perm staffing solutions. Whatever your workforce needs, we can tailor a solution that fits.",
   },
   {
-    question: "What makes TeamUp different from other recruitment agencies?",
+    question: "What makes Liam Consulting different from other recruitment agencies?",
     answer:
       "We take a partnership approach \u2014 not transactional. We invest time understanding your culture, values, and long-term goals, so every hire is a strategic fit, not just a skills match.",
   },
@@ -59,7 +59,7 @@ export default function FAQ() {
             FAQs
           </h2>
           <p className="mt-4 text-sm text-white/40">
-            Everything you need to know about working with TeamUp.
+            Everything you need to know about working with Liam Consulting.
           </p>
         </motion.div>
 

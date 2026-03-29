@@ -9,7 +9,7 @@ const testimonials = [
   {
     number: "01",
     quote:
-      "TeamUp understood our culture from day one. They didn\u2019t just send resumes \u2014 they sent people who fit. Our retention has never been better.",
+      "Liam Consulting understood our culture from day one. They didn\u2019t just send resumes \u2014 they sent people who fit. Our retention has never been better.",
     name: "Juliana Lim",
     role: "People Ops Lead",
     company: "CloudArc",
@@ -18,7 +18,7 @@ const testimonials = [
   {
     number: "02",
     quote:
-      "TeamUp made our hiring process feel organized and calm. The shortlist quality was strong, timelines were clear, and updates were consistent. The onboarding checklist helped new hires start smoothly and become productive faster.",
+      "Liam Consulting made our hiring process feel organized and calm. The shortlist quality was strong, timelines were clear, and updates were consistent. The onboarding checklist helped new hires start smoothly and become productive faster.",
     name: "Sam de Carlo",
     role: "Founder",
     company: "RetailNest",
@@ -27,7 +27,7 @@ const testimonials = [
   {
     number: "03",
     quote:
-      "We needed to hire fast without compromising on quality. TeamUp delivered exactly that \u2014 structured, transparent, and genuinely supportive throughout.",
+      "We needed to hire fast without compromising on quality. Liam Consulting delivered exactly that \u2014 structured, transparent, and genuinely supportive throughout.",
     name: "Regina Winston",
     role: "Operations Manager",
     company: "Mediqore",
@@ -61,7 +61,7 @@ export default function TrustSection() {
             className="text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight"
             style={{ fontSize: "clamp(1.875rem, 3.5vw, 2.5rem)" }}
           >
-            Teams Trust TeamUp to Deliver
+            Teams Trust Liam Consulting to Deliver
           </h2>
           <p className="mt-4 text-sm text-white/40 leading-relaxed">
             Honest feedback from founders and HR leads who needed hiring to move

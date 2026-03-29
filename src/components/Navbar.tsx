@@ -30,15 +30,10 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2">
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
-              <Zap size={16} className="text-white fill-white" />
-            </div>
-            <span className="text-lg font-bold text-white tracking-tight">
-              TeamUp
-            </span>
+            <img src="/logo.png" alt="Logo" className="h-24 w-24 object-contain" />
           </Link>
 
           {/* Desktop Nav */}

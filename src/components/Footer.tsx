@@ -5,7 +5,7 @@ import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const footerLinks = {
-  Services: ["Talent Sourcing", "Employer Branding", "Onboarding", "HR Consulting"],
+  Services: ["Recruitment Support", "HR Outsourcing", "Training & Development", "Laundry & Cleaning"],
   Company: ["About Us", "Careers", "Blog", "Contact"],
   Resources: ["Case Studies", "Guides", "Webinars", "FAQ"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
@@ -27,17 +27,13 @@ export default function Footer() {
         >
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
+            {/* Logo */}
             <Link href="/" className="group flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-600">
-                <Zap size={14} className="text-white fill-white" />
-              </div>
-              <span className="text-lg font-bold text-white tracking-tight">
-                TeamUp
-              </span>
+              <img src="/logo.png" alt="Logo" className="h-34 w-34 object-contain" />
             </Link>
+
             <p className="mt-4 text-sm text-white/30 leading-relaxed max-w-xs">
-              Your trusted partner for building exceptional teams. From first
-              interview to first day.
+              Your Strategic HR Partner for Business Growth and Success.
             </p>
           </div>
 
@@ -64,7 +60,7 @@ export default function Footer() {
 
         <div className="mt-14 pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
-            &copy; {new Date().getFullYear()} TeamUp. All rights reserved.
+            &copy; {new Date().getFullYear()} Liam Consulting Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {["Twitter", "LinkedIn", "Instagram"].map((social) => (

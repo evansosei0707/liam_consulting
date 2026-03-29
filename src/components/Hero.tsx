@@ -6,18 +6,20 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const logos = [
-  "RetailNest",
-  "BrightFoods",
-  "CloudArc",
-  "NovaTech",
-  "Mediqore",
-  "StarOrange",
-  "RetailNest",
-  "BrightFoods",
-  "CloudArc",
-  "NovaTech",
-  "Mediqore",
-  "StarOrange",
+  "MTN",
+  "PwC",
+  "Nestle",
+  "KPMG",
+  "Ecobank",
+  "AngloGold Ashanti",
+  "MainOne",
+  "MTN",
+  "PwC",
+  "Nestle",
+  "KPMG",
+  "Ecobank",
+  "AngloGold Ashanti",
+  "MainOne",
 ];
 
 const wordReveal = {
@@ -91,15 +93,15 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/[0.08] px-4 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
-            Build High-Fit Teams
+            Strategic HR & Operations Partner
           </span>
         </motion.div>
 
         {/* Heading */}
         <h1 className="mt-8 text-white leading-[1.05] tracking-tight" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}>
-          <AnimatedHeading text="Find the Right People Faster." className="block font-bold" />
+          <AnimatedHeading text="Transforming HR" className="block font-bold" />
           <AnimatedHeading
-            text="Keep Them Longer."
+            text="One Business at a Time."
             className="block font-bold bg-gradient-to-r from-blue-400 via-violet-400 to-brand-accent bg-clip-text text-transparent"
           />
         </h1>
@@ -111,8 +113,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-6 text-base sm:text-lg text-white/50 max-w-xl mx-auto leading-relaxed"
         >
-          TeamUp helps you hire for fit and support onboarding so teams stay
-          engaged after day one.
+          Your Strategic HR Partner for Business Growth and Success. Our integrated approach to HR and operations ensures your business thrives.
         </motion.p>
 
         {/* CTA */}
@@ -126,7 +127,7 @@ export default function Hero() {
             href="#contact"
             className="btn-magnetic group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-950 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-300"
           >
-            Get Hiring Support
+            Get Free Consultation
             <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
           </Link>
           <Link
@@ -149,7 +150,7 @@ export default function Hero() {
           {/* Left image */}
           <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px]">
             <Image
-              src="https://picsum.photos/seed/hero-left-v2/600/450"
+              src="/handshake.jpeg"
               alt="Team meeting in a modern office"
               fill
               className="object-cover"
@@ -162,17 +163,17 @@ export default function Hero() {
           {/* Center quote card */}
           <div className="bg-brand-900/80 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between border-x border-white/[0.04]">
             <p className="text-[15px] sm:text-base font-medium text-white/90 leading-relaxed">
-              &ldquo; TeamUp efficiently managed hiring across locations.
+              &ldquo; Liam Consulting efficiently managed hiring across locations.
               Scheduling, screening, and documentation ran smoothly, and new
               hires arrived better prepared. &rdquo;
             </p>
             <div className="mt-6 pt-4 border-t border-white/[0.06]">
               <p className="text-sm font-semibold text-white">
-                Regina Winston
+                William Smith
               </p>
               <p className="text-xs text-white/50">
-                Operations Manager &mdash;{" "}
-                <span className="font-semibold text-white/70">Mediqore</span>
+                CEO &mdash;{" "}
+                <span className="font-semibold text-white/70">Liam Consulting</span>
               </p>
             </div>
           </div>
@@ -180,7 +181,7 @@ export default function Hero() {
           {/* Right image */}
           <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[300px]">
             <Image
-              src="https://picsum.photos/seed/hero-right-v2/600/450"
+              src="/worker.png"
               alt="Professional holding a tablet in an office"
               fill
               className="object-cover"
@@ -200,9 +201,9 @@ export default function Hero() {
         className="relative z-10 text-center px-4 pb-8"
       >
         <p className="text-sm text-white/40">
-          Trusted by companies improving{" "}
-          <span className="font-semibold text-white/70">retention</span> and
-          ramp time.
+          Your trusted partner for{" "}
+          <span className="font-semibold text-white/70">growth</span> and
+          excellence.
         </p>
       </motion.div>
 
