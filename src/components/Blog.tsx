@@ -28,7 +28,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="resources" className="relative bg-brand-950 py-20 md:py-28">
+    <section id="resources" className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

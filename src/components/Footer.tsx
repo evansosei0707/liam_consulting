@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             {/* Logo */}
             <Link href="/" className="group flex items-center gap-2">
-              <img src="/logo.png" alt="Logo" className="h-34 w-34 object-contain" />
+              <img src="/logo.png" alt="Logo" className="h-20 w-20 object-contain" />
             </Link>
 
             <p className="mt-4 text-sm text-white/30 leading-relaxed max-w-xs">

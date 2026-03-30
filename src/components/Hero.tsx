@@ -80,8 +80,8 @@ export default function Hero() {
       />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/[0.07] rounded-full blur-[120px] animate-pulse-glow pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-violet-500/[0.05] rounded-full blur-[100px] animate-pulse-glow pointer-events-none" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/[0.07] rounded-full blur-[120px] animate-pulse-glow pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-violet-500/[0.05] rounded-full blur-[100px] animate-pulse-glow pointer-events-none" style={{ animationDelay: "2s" }} />
 
       {/* ── Main hero content ── */}
       <div className="relative z-10 flex-1 flex flex-col justify-center mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-36 md:pb-20 text-center">
@@ -212,7 +212,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.3 }}
-        className="relative z-10 border-t border-white/[0.04] bg-white/[0.02]"
+        className="relative z-10 border-t border-white/[0.04] bg-white/[0.02] overflow-hidden"
       >
         <div className="mx-auto max-w-7xl py-5 overflow-hidden">
           <div className="flex items-center gap-16 animate-marquee whitespace-nowrap">

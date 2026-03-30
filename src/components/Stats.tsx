@@ -44,7 +44,7 @@ const clientCards = [
 
 export default function Stats() {
   return (
-    <section className="relative bg-brand-950 py-20 md:py-28">
+    <section className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 mesh-gradient-dark pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

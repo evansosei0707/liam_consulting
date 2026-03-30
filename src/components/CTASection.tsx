@@ -12,7 +12,7 @@ const selectClass =
 
 export default function CTASection() {
   return (
-    <section id="contact" className="relative bg-brand-950 py-20 md:py-28">
+    <section id="contact" className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
       {/* Background glow */}
@@ -46,7 +46,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-xs text-white/50 uppercase tracking-widest font-semibold mb-1">Email</p>
-                  <p className="text-lg text-white font-medium">info@liamconsultingltd.com</p>
+                  <p className="text-base sm:text-lg text-white font-medium break-all sm:break-normal">info@liamconsultingltd.com</p>
                 </div>
               </div>
 

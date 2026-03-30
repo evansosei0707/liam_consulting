@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section id="about" className="relative bg-brand-950 py-20 md:py-28">
+    <section id="about" className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       <div className="absolute inset-0 mesh-gradient pointer-events-none" />
 

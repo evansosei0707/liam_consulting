@@ -43,7 +43,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-brand-950 py-20 md:py-28">
+    <section id="services" className="relative bg-brand-950 py-20 md:py-28 overflow-hidden">
       <div className="absolute inset-0 mesh-gradient pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
