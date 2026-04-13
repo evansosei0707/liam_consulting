@@ -6,9 +6,9 @@ import { Menu, X, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
 ];
 
 export default function Navbar() {
@@ -52,7 +52,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <Link
-              href="#contact"
+              href="/contact"
               className="btn-magnetic rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-white hover:border-white/30 hover:bg-white/[0.05] transition-all"
             >
               Contact Us
@@ -98,7 +98,7 @@ export default function Navbar() {
               ))}
               <div className="pt-3 mt-2 border-t border-white/[0.06]">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="block w-full text-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white mt-2"
                 >

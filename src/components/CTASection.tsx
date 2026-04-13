@@ -52,8 +52,8 @@ export default function CTASection() {
 
               <div className="hidden lg:block mt-12 relative w-[200px] h-[220px] rounded-2xl overflow-hidden ring-1 ring-white/[0.08] shadow-2xl shadow-black/20">
                 <Image
-                  src="/logo2.png"
-                  alt="HR professional ready to help"
+                  src="/og.png"
+                  alt="Liam Consulting Logo"
                   fill
                   className="object-cover"
                   sizes="200px"

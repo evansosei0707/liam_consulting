@@ -169,7 +169,7 @@ export default function Hero() {
             </p>
             <div className="mt-6 pt-4 border-t border-white/[0.06]">
               <p className="text-sm font-semibold text-white">
-                William Smith
+                William Annor
               </p>
               <p className="text-xs text-white/50">
                 CEO &mdash;{" "}
