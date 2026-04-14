@@ -4,23 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { clients } from "@/lib/clients";
 
-const logos = [
-  "MTN",
-  "PwC",
-  "Nestle",
-  "KPMG",
-  "Ecobank",
-  "AngloGold Ashanti",
-  "MainOne",
-  "MTN",
-  "PwC",
-  "Nestle",
-  "KPMG",
-  "Ecobank",
-  "AngloGold Ashanti",
-  "MainOne",
-];
+// Duplicate the list so the marquee loops seamlessly
+const marqueeClients = [...clients, ...clients];
 
 const wordReveal = {
   hidden: {},
@@ -214,15 +201,30 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 1.3 }}
         className="relative z-10 border-t border-white/[0.04] bg-white/[0.02] overflow-hidden"
       >
-        <div className="mx-auto max-w-7xl py-5 overflow-hidden">
-          <div className="flex items-center gap-16 animate-marquee whitespace-nowrap">
-            {logos.map((name, i) => (
-              <span
-                key={i}
-                className="text-sm font-semibold text-white/20 select-none shrink-0 tracking-wider uppercase"
+        {/* Fade masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-brand-950 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-brand-950 to-transparent" />
+
+        <div className="py-6 overflow-hidden">
+          <div className="flex items-center gap-10 sm:gap-14 animate-marquee whitespace-nowrap w-max">
+            {marqueeClients.map((client, i) => (
+              <div
+                key={`${client.name}-${i}`}
+                className="group flex items-center gap-3 shrink-0"
               >
-                {name}
-              </span>
+                {/* <div className="relative h-10 w-10 sm:h-11 sm:w-11 rounded-lg overflow-hidden bg-white ring-1 ring-white/10 p-1 shrink-0">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    className="object-contain"
+                    sizes="44px"
+                  />
+                </div> */}
+                <span className="text-sm font-semibold text-white/40 group-hover:text-white/70 select-none tracking-wide transition-colors">
+                  {client.name}
+                </span>
+              </div>
             ))}
           </div>
         </div>
